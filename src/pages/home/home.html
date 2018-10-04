@@ -1,0 +1,319 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>ตอนที่ 4 การค้าและบริการ
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  4.1 ชื่อสถานประกอบการ/หน่วยงาน
+  <ion-card>
+    <ion-input class="backgroundinput" type="text" placeholder="กรอกชื่อ"></ion-input>
+  </ion-card>
+
+  4.2 สถานประกอบการแห่งนี้ให้บริการในลักษณะใด(ระบุบริการหลักที่ทำ)
+  <ion-card>
+    <ion-input  (click)="modalshow()" type="text" placeholder="กรอกสถานประกอบการ"></ion-input>
+  </ion-card>
+
+  <div>
+    4.3ประเภทบ้าน/อาคาร/สิ่งปลูกสร้าง(ถามเฉพาะกรณีเป็นยูนิตย่อย)
+    <ion-item padding>
+      <ion-label>เลือกประเภท</ion-label>
+
+      <ion-select [(ngModel)]="gender">
+        <ion-option value="a1">1.บ้านเดี่ยว</ion-option>
+        <ion-option value="a2">2.บ้านแฝด/ทาวน์เฮ้า/ทาวน์โฮม</ion-option>
+        <ion-option value="a3">3.ห้องแถว/เรือนแถว/ตึกแถว</ion-option>
+        <ion-option value="a4">4.อาคารสูง/คอนโด/แมนชั่น</ion-option>
+        <ion-option value="a5">5.อาคารสำนักงานเอกชน</ion-option>
+        <ion-option value="a6">6.โรงแรม/รีสอร์ท/เกสเฮ้าส์</ion-option>
+        <ion-option value="a7">7.สถานพยาบาล:ภาครัฐ</ion-option>
+        <ion-option value="a8">8.สถานพยาบาล:ภาคเอกชน</ion-option>
+        <ion-option value="a9">9.สถานที่ราชการ/รัฐวิสหกิจ</ion-option>
+        <ion-option value="a10">10.ศาสนสถาน</ion-option>
+        <ion-option value="a11">11.สถานศึกษา : ภาครัฐ</ion-option>
+        <ion-option value="a12">12.สถานศึกษา : เอกชน</ion-option>
+        <ion-option value="a13">13.โกดังโรงงาน</ion-option>
+        <ion-option value="a14">14.โรงเรือนเพราะปลูก/เลี้ยงสัตว์</ion-option>
+        <ion-option value="a15">15.อาคารกำลังก่อสร้าง</ion-option>
+        <ion-option value="a16">16.อื่นๆ</ion-option>
+      </ion-select>
+
+    </ion-item>
+  </div><br>
+
+
+  4.4 (1) สถานศึกษา/โรงเรียน/สถาบันการศึกษา
+  <div padding>
+    1) โรงเรียน/สถานบันการศึกษาแห่งนี้เปิดสอน นักเรียน/นักศึกษา ระดับใดบ้าง
+    <ion-card>
+      <ion-grid>
+        <ion-row style="align-items: center">
+          <ion-col>
+            <ion-checkbox [(ngModel)]="a"></ion-checkbox>
+            <label>1.ก่อนวัยเรียน</label>
+          </ion-col>
+          <ion-col>
+            <button ion-button outline block color="dark" (click)="presentModal(preNessery)">{{preNessery.amount}}</button>
+          </ion-col>
+          <ion-col col-2>
+            คน
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row style="align-items: center">
+          <ion-col>
+            <ion-checkbox [(ngModel)]="b"></ion-checkbox>
+            <label>2.อนุบาล</label>
+          </ion-col>
+          <ion-col>
+            <ion-input type="text" placeholder="จำนวน"></ion-input>
+          </ion-col>
+          <ion-col col-2>
+            คน
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row style="align-items: center">
+          <ion-col>
+            <ion-checkbox [(ngModel)]="c"></ion-checkbox>
+            <label>3.ประถมศึกษา</label>
+          </ion-col>
+          <ion-col>
+            <ion-input type="text" placeholder="จำนวน"></ion-input>
+          </ion-col>
+          <ion-col col-2>
+            คน
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row style="align-items: center">
+          <ion-col>
+            <ion-checkbox [(ngModel)]="d"></ion-checkbox>
+            <label>4.มัธยมศึกษา</label>
+          </ion-col>
+          <ion-col>
+            <ion-input type="text" placeholder="จำนวน"></ion-input>
+          </ion-col>
+          <ion-col col-2>
+            คน
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row style="align-items: center">
+          <ion-col>
+            <ion-checkbox [(ngModel)]="e"></ion-checkbox>
+            <label>5. ปวช./ปวส.</label>
+          </ion-col>
+          <ion-col>
+            <ion-input type="text" placeholder="จำนวน"></ion-input>
+          </ion-col>
+          <ion-col col-2>
+            คน
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid>
+        <ion-row style="align-items: center">
+          <ion-col>
+            <ion-checkbox [(ngModel)]="f"></ion-checkbox>
+            <label>6. อุดมศึกษา</label>
+          </ion-col>
+          <ion-col>
+            <ion-input type="text" placeholder="จำนวน"></ion-input>
+          </ion-col>
+          <ion-col col-2>
+            คน
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </ion-card>
+   
+    2) มีจำนวนบุลคลากรรวมทั้งหมดทุกประเภทกี่คน (รวมครู, นักวิชาการ, พนักงาน, ภารโรง, ฯลฯ)
+    <ion-input type="number" placeholder="จำนวนบุลคลากร"></ion-input>
+  </div>
+
+  4.4 (2) โรงแรม/รีสอร์ท/เกสต์เฮาส์
+  <div padding>
+    1) มีจำนวนห้องพักรวมทั้งหมดกี่ห้อง
+    <ion-input class="backgroundinput" type="number"></ion-input>
+    2) มีจำนวนบุคลากรรวมทั้งหมดทุกประเภทกี่คน
+    <ion-input type="number"></ion-input>
+  </div>
+
+
+  4.4 (3) สถานพยาบาล/โรงบยาบาล/สถานสงเคราะห์
+  <div padding>
+    1) มีจำนวนเตียงพักค้างคืน(ผู้ป่วยใน) รวมทั้งหมดเท่าไร
+    <ion-input type="number"></ion-input>
+    2)มีจำนวนบุคลากรรวมทั้งหมดทุกประเภทกี่คน(หมอ, พยาบาล, เจ้าหน้าที่ ฯลฯ)
+    <ion-input type="number"></ion-input>
+  </div>
+
+
+  4.4 (4) คอนโด/อพาร์ทเม้นต์/หอพัก/แมนชั่น/แฟลต
+  <div padding>
+    1) มีจำนวนห้องทั้งหมดกี่ห้อง
+    <ion-input type="number"></ion-input>
+    2) จำนวนห้องที่มีผู้อยู่อาศัยมีกี่ห้อง(ณ วันที่สำรวจ)
+    <ion-input type="number"></ion-input>
+    3) มีจำนวนบุคลากรรวมทั้งหมดทุกประเภทกี่คน(ผู้จัดการ, แม่บ้าน, คนสวน, รปภ, ฯลฯ)
+    <ion-input type="number"></ion-input>
+  </div>
+
+  4.4 (5) ศาสนสถาน/วัด/สำนักสงฆ์/สำนักปฏิบัติธรรม
+  <div padding>
+    1) มีจำนวนพระสงฆ์ สามเณร ชี เด็กวัด ผู้มาประกอบศสนกิจ ผู้ปฏิบัติธรรม โดยเฉลี่ยนเดือนละกี่คน
+    <ion-input type="number"></ion-input>
+  </div>
+
+  <div padding>
+    4.4 (6) สถานประกอบการบรริการประเภทอื่นๆ หรือรหัสประเภทบ้าน/อาคาร/สิ่งปลูกสร้างอื่นๆ ในข้อ 4.6 (เช่น ร้านค้า
+    ร้านขายของชำ ร้านเสริมสวย เป็นต้น)
+
+    1.มีจำนวนบุคลากร/คนทำงานรวมทั้งหมดกี่คน
+    <ion-input type="number"></ion-input>
+  </div>
+
+  4.5 สถานประกอบการแห่งนี้ใช้น้ำจากแหล่งใดบ้าง
+  <div padding>
+    <ion-list>
+
+      <ion-item>
+        <ion-label>1.น้ำประปา</ion-label>
+        <ion-checkbox [(ngModel)]="aa"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>2.น้ำบาดาล</ion-label>
+        <ion-checkbox [(ngModel)]="bb"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>3.น้ำจากสระ</ion-label>
+        <ion-checkbox [(ngModel)]="cc"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>4.น้ำจากแม้น้ำ/ลำคลอง/<br>แหล่งน้ำสาธารณะ</ion-label>
+        <ion-checkbox [(ngModel)]="dd"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>5.น้ำจากชลประทาน</ion-label>
+        <ion-checkbox [(ngModel)]="ee"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>6.น้ำฝนที่กักเก็บไว้</ion-label>
+        <ion-checkbox [(ngModel)]="ff"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>7.น้ำที่ซื้อมาใช้</ion-label>
+        <ion-checkbox [(ngModel)]="gg"></ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-label>8.อื่นๆ..........................................</ion-label>
+        <ion-checkbox [(ngModel)]="hh"></ion-checkbox>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>
+ <!-- <ion-card>
+      <ion-grid>
+        <ion-row style="align-items: center">
+          <ion-col>
+            <ion-checkbox [(ngModel)]="a"></ion-checkbox>
+            <label>1.ก่อนวัยเรียน</label>
+          </ion-col>
+          <ion-col>
+            <ion-input type="text" placeholder="จำนวน"></ion-input>
+          </ion-col>
+          <ion-col col-1>
+            คน
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+    <ion-card>
+        <ion-grid>
+          <ion-row style="align-items: center">
+            <ion-col>
+              <ion-checkbox [(ngModel)]="a"></ion-checkbox>
+              <label>2.อนุบาล</label>
+            </ion-col>
+            <ion-col>
+              <ion-input type="text" placeholder="จำนวน"></ion-input>
+            </ion-col>
+            <ion-col col-1>
+              คน
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+      <ion-card>
+          <ion-grid>
+            <ion-row style="align-items: center">
+              <ion-col>
+                <ion-checkbox [(ngModel)]="a"></ion-checkbox>
+                <label>3.ประถมศึกษา</label>
+              </ion-col>
+              <ion-col>
+                <ion-input type="text" placeholder="จำนวน"></ion-input>
+              </ion-col>
+              <ion-col col-1>
+                คน
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+        <ion-card>
+            <ion-grid>
+              <ion-row style="align-items: center">
+                <ion-col>
+                  <ion-checkbox [(ngModel)]="a"></ion-checkbox>
+                  <label>4. มัธยมศึกษา</label>
+                </ion-col>
+                <ion-col>
+                  <ion-input type="text" placeholder="จำนวน"></ion-input>
+                </ion-col>
+                <ion-col col-1>
+                  คน
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+          <ion-card>
+              <ion-grid>
+                <ion-row style="align-items: center">
+                  <ion-col>
+                    <ion-checkbox [(ngModel)]="a"></ion-checkbox>
+                    <label>5. ปวช./ปวส.</label>
+                  </ion-col>
+                  <ion-col>
+                    <ion-input type="text" placeholder="จำนวน"></ion-input>
+                  </ion-col>
+                  <ion-col col-1>
+                    คน
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card>
+            <ion-card>
+                <ion-grid>
+                  <ion-row style="align-items: center">
+                    <ion-col>
+                      <ion-checkbox [(ngModel)]="a"></ion-checkbox>
+                      <label>6. อุดมศึกษา</label>
+                    </ion-col>
+                    <ion-col>
+                      <ion-input type="text" placeholder="จำนวน"></ion-input>
+                    </ion-col>
+                    <ion-col col-1>
+                      คน
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card> -->
