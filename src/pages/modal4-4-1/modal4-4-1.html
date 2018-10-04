@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar color="primary">
-    <ion-title>Modal4.4(1)</ion-title>
+    <ion-title>ระดับที่โรงเรียน/สถานบันการศึกษาแห่งนี้เปิดสอน</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,12 +9,19 @@
 
 <ion-content padding>
 
-  <ion-list>
-    <ion-item>
-      <ion-label floating>จำนวน (คน)</ion-label>
-      <ion-input type="number" [(ngModel)]="amountRecieve.amount"></ion-input>
-    </ion-item>
-  </ion-list>
+  <ion-row style="align-items: center;text-align: center">
+    <ion-col col-6>
+      <ion-item>
+        <ion-checkbox [(ngModel)]="amountRecieve.isCheck"></ion-checkbox>
+        <ion-label>{{amountRecieve.name}}</ion-label>
+      </ion-item>
+    </ion-col>
+    <ion-col col-6>
+      <ion-item>
+        <ion-input type="number" placeholder="จำนวน (คน)" [(ngModel)]="amountRecieve.amount"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
 
 </ion-content>
 

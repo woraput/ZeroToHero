@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {  countPeople } from '../../app/models';
+import { other } from '../../app/models';
 
 /**
- * Generated class for the Modal4_4_1Page page.
+ * Generated class for the ModalOtherPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -11,31 +11,25 @@ import {  countPeople } from '../../app/models';
 
 @IonicPage()
 @Component({
-  selector: 'page-modal4-4-1',
-  templateUrl: 'modal4-4-1.html',
+  selector: 'page-modal-other',
+  templateUrl: 'modal-other.html',
 })
-export class Modal4_4_1Page {
+export class ModalOtherPage {
 
-  amountRecieve: countPeople = new countPeople;
-
+  otherReceive : other = new other;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad Modal4_4_1Page');
+    console.log('ionViewDidLoad ModalOtherPage');
   }
 
   ionViewDidEnter() {
-    this.amountRecieve = this.navParams.data._amount;
-    console.log(this.amountRecieve);
+    this.otherReceive = this.navParams.data._other;
   }
 
   confirm() {
     this.navCtrl.pop();
-    console.log(this.amountRecieve);
   }
-
-
 
 }

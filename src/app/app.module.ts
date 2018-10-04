@@ -13,6 +13,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ModalPage } from '../pages/modal/modal';
 import { Modal4_4_1Page } from '../pages/modal4-4-1/modal4-4-1';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ModalOtherPage } from '../pages/modal-other/modal-other';
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomePage,
     TabsPage,
     ModalPage,
-    Modal4_4_1Page
+    Modal4_4_1Page,
+    ModalOtherPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomePage,
     TabsPage,
     ModalPage,
-    Modal4_4_1Page
+    Modal4_4_1Page,
+    ModalOtherPage
   ],
   providers: [
     StatusBar,
